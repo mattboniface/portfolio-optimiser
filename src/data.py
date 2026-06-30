@@ -13,8 +13,8 @@ class DataLoader():
     def __init__(self):
         self.data = None
     
-    def fetch_data(self,ticker: str,start: str = None,end: str = None, period: str = None) -> pd.Series:
-        self.data = yf.download(tickers = ticker, start=start, end=end,period=period)["Close"]
+    def fetch_data(self,tickers: str,start: str = None,end: str = None, period: str = None) -> pd.Series:
+        self.data = yf.download(tickers = tickers, start=start, end=end,period=period)["Close"]
         return self.data
     
     def returns(self) -> pd.DataFrame:
